@@ -18,19 +18,25 @@ $('#KeggRes').text(str);
 };
 
 parseKegg = function(str) {
-	console.log("str = " + str);
+	//console.log("str = " + str);
 	var ooga = str.match(/map.*/gm);
-	console.log("ooga = " + ooga);
+	console.log(ooga);
 };
-
 //.split('\t');
 parseWikiQ = function (str) {
+	console.log("str = " + str);
+
 	//var lele = $.xml2json(str);
 	var results = ($.xml2json(str)).result;
 	console.log(str, results);		
 };
 
-
+compilekeggQ = function(metabolite_list) {
+	for (i = 0; i <= metabolite_list.length; i +=1){
+		keggQ(metabolite_list[i], parseKegg);
+	}	
+	
+};
 //keggQ('list/pathway/hsa', printToDiv);
 //keggQ('list/pathway/hsa', parseKegg);
 //wikiQ('apoptosis', console.log);
