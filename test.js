@@ -18,13 +18,11 @@ $('#KeggRes').text(str);
 };
 
 parseKegg = function(str) {
-	var ret = [];
-	var strArr = str.split('\n');
-	for( var i = 0; i < strArr.length; i += 1 ) {
-		ret[i] = strArr[i].split('\t');
-	}
-	console.log(ret);
+	console.log("str = " + str);
+	var ooga = str.match(/map.*/gm);
+	console.log("ooga = " + ooga);
 };
+
 //.split('\t');
 parseWikiQ = function (str) {
 	//var lele = $.xml2json(str);
